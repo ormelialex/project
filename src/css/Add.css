@@ -1,0 +1,13 @@
+.textInTable{
+    text-align: center;
+    color: wheat;
+    border: 30px solid transparent;
+}
+.addTable{
+    text-align: center;
+    color: black;
+    width: 80%;
+    position: relative;
+    left: 10%;
+    
+}
