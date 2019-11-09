@@ -3,6 +3,8 @@ import styles from '../css/MainPage.css';
 import GroupList, { AddGroup, GetGroupById} from './Group';
 import StudentList, {AddStudent} from "./Student";
 
+
+//TODO https://github.com/Jeerjmin/weather-app
 export function MainPage() {
     return (
       <div className="MainPage">

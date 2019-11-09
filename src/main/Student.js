@@ -1,9 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import ListOfGroup from './ListOfGroup'
 import '../css/Add.css'
 import '../css/Header.css'
-import {GetListOfStudentsByGroup} from "./Main";
 import Button from "./Button";
 import Modal from "./Modal";
 
@@ -20,7 +18,7 @@ import Modal from "./Modal";
 
 
 
-export class StudentList extends React.Component {
+class StudentList extends React.Component {
 
     state = {
         isOpen: false,
@@ -63,24 +61,24 @@ export class StudentList extends React.Component {
                         <td>{student.age}</td>
                         <td>{student.hasDebt ? 'Присутствуют' : 'Отсутствуют'}</td>
                         <td>
-                        <Button onClick={this.openModal}>Изменить студента</Button>
-                        <Modal
-                        title="Подтвердите изменение"
-                        isOpen={this.state.isOpen}
-                        onCancel={this.handleCancel}
-                        onSubmit={this.handleSubmit}
-                        >
-                        </Modal>
+                            <Button onClick={this.openModal}>Изменить студента</Button>
+                            <Modal
+                                title="Подтвердите действие"
+                                isOpen={this.state.isOpen}
+                                onCancel={this.handleCancel}
+                                onSubmit={this.handleSubmit}
+                            >
+                            </Modal>
                         </td>
                         <td>
-                        <Button onClick={this.openModal}>Удалить студента</Button>
-                        <Modal
-                        title="Подтвердите удаление"
-                        isOpen={this.state.isOpen}
-                        onCancel={this.handleCancel}
-                        onSubmit={this.handleSubmit}
-                        >
-                        </Modal>
+                            <Button onClick={this.openModal}>Удалить студента</Button>
+                            <Modal
+                                title="Подтвердите действие"
+                                isOpen={this.state.isOpen}
+                                onCancel={this.handleCancel}
+                                onSubmit={this.handleSubmit}
+                            >
+                            </Modal>
                         </td>
                     </tr>
                     ))))

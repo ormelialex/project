@@ -18,7 +18,6 @@ import Button from './Button';
   // listOfGroup.push(new Group(9,'ИВЧТ','очная', 2, [new Student(1,'Егоров Иван Иванович', 4.5, 'очная', 20, false), new Student(2,'Иванов Иван Александрович', 4.0, 'очная', 22, true), new Student(3,'Иванов Егор Иванович', 5.0, 'очная', 21, true)]));
 
 export class GroupList extends React.Component{
-//export const GroupList = () => (
      state = {
          isOpen: false,
      }
@@ -59,7 +58,7 @@ export class GroupList extends React.Component{
                          <td>
                              <Button onClick={this.openModal}>Изменить группу</Button>
                              <Modal
-                                 title="Подтвердите изменение"
+                                 title="Подтвердите действие"
                                  isOpen={this.state.isOpen}
                                  onCancel={this.handleCancel}
                                  onSubmit={this.handleSubmit}
@@ -69,7 +68,7 @@ export class GroupList extends React.Component{
                          <td>
                              <Button onClick={this.openModal}>Удалить группу</Button>
                              <Modal
-                                 title="Подтвердите удаление"
+                                 title="Подтвердите действие"
                                  isOpen={this.state.isOpen}
                                  onCancel={this.handleCancel}
                                  onSubmit={this.handleSubmit}
@@ -196,7 +195,7 @@ export class GetGroupById extends React.Component {
                                 <td>
                                     <Button onClick={this.openModal}>Изменить группу</Button>
                                     <Modal
-                                        title="Подтвердите изменение"
+                                        title="Подтвердите действие"
                                         isOpen={this.state.isOpen}
                                         onCancel={this.handleCancel}
                                         onSubmit={this.handleSubmit}
@@ -206,7 +205,7 @@ export class GetGroupById extends React.Component {
                                 <td>
                                     <Button onClick={this.openModal}>Удалить группу</Button>
                                     <Modal
-                                        title="Подтвердите удаление"
+                                        title="Подтвердите действие"
                                         isOpen={this.state.isOpen}
                                         onCancel={this.handleCancel}
                                         onSubmit={this.handleSubmit}
