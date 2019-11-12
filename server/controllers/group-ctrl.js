@@ -21,7 +21,7 @@ createGroup = (req, res) => {
         .then(() => {
             return res.status(201).json({
                 success: true,
-                id: group._id,
+                _id: group._id,
                 message: 'group created!',
             })
         })
@@ -43,22 +43,24 @@ updateGroup = async (req, res) => {
         })
     }
 
-    Group.findOne({ id: req.params.id }, (err, group) => {
+    Group.findOne({ _id: req.params._id }, (err, group) => {
         if (err) {
             return res.status(404).json({
                 err,
                 message: 'group not found!',
             })
         }
-        group.name = body.name
-        group.time = body.time
-        group.rating = body.rating
+        group._id = body._id
+        group.direction = body.direction
+        group.typeEducation = body.typeEducation
+        group.course = body.course
+        group.students = body.students
         group
             .save()
             .then(() => {
                 return res.status(200).json({
                     success: true,
-                    id: group._id,
+                    _id: group._id,
                     message: 'group updated!',
                 })
             })
@@ -72,7 +74,7 @@ updateGroup = async (req, res) => {
 }
 
 deleteGroup = async (req, res) => {
-    await Group.findOneAndDelete({ id: req.params.id }, (err, group) => {
+    await Group.findOneAndDelete({ _id: req.params._id }, (err, group) => {
         if (err) {
             return res.status(400).json({ success: false, error: err })
         }
@@ -88,7 +90,7 @@ deleteGroup = async (req, res) => {
 }
 
 getGroupById = async (req, res) => {
-    await Group.findOne({ id: req.params.id }, (err, group) => {
+    await Group.findOne({ _id: req.params._id }, (err, group) => {
         if (err) {
             return res.status(400).json({ success: false, error: err })
         }

@@ -4,10 +4,10 @@ const StudentsCtrl = require('../controllers/student-ctrl')
 
 const router = express.Router()
 
-router.post('/students', StudentsCtrl.createStudent)
-router.put('/students/:id', StudentsCtrl.updateStudent)
-router.delete('/students/:id', StudentsCtrl.deleteStudent)
-router.get('/students/:id', StudentsCtrl.getStudentById)
+router.post('/student', StudentsCtrl.createStudent)
+router.put('/student/:id', StudentsCtrl.updateStudent)
+router.delete('/student/:id', StudentsCtrl.deleteStudent)
+router.get('/student/:id', StudentsCtrl.getStudentById)
 router.get('/students', StudentsCtrl.getStudents)
 
 module.exports = router

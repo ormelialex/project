@@ -21,7 +21,7 @@ createStudent = (req, res) => {
         .then(() => {
             return res.status(201).json({
                 success: true,
-                id: student._id,
+                _id: student._id,
                 message: 'student created!',
             })
         })
@@ -43,22 +43,24 @@ updateStudent = async (req, res) => {
         })
     }
 
-    Student.findOne({ _id: req.params.id }, (err, student) => {
+    Student.findOne({ _id: req.params._id }, (err, student) => {
         if (err) {
             return res.status(404).json({
                 err,
                 message: 'student not found!',
             })
         }
-        student.name = body.name
-        student.time = body.time
-        student.rating = body.rating
+        student.fio = body.fio
+        student.avgScore = body.avgScore
+        student.typeEducation = body.typeEducation
+        student.age = body.age
+        student.hasDebt = body.hasDebt
         student
             .save()
             .then(() => {
                 return res.status(200).json({
                     success: true,
-                    id: student._id,
+                    _id: student._id,
                     message: 'student updated!',
                 })
             })
@@ -72,7 +74,7 @@ updateStudent = async (req, res) => {
 }
 
 deleteStudent = async (req, res) => {
-    await Student.findOneAndDelete({ _id: req.params.id }, (err, student) => {
+    await Student.findOneAndDelete({ _id: req.params._id }, (err, student) => {
         if (err) {
             return res.status(400).json({ success: false, error: err })
         }
@@ -88,7 +90,7 @@ deleteStudent = async (req, res) => {
 }
 
 getStudentById = async (req, res) => {
-    await student.findOne({ _id: req.params.id }, (err, student) => {
+    await Student.findOne({ _id: req.params._id }, (err, student) => {
         if (err) {
             return res.status(400).json({ success: false, error: err })
         }

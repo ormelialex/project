@@ -7,7 +7,7 @@ const groupRouter = require('./routes/group-router')
 const studentRouter = require('./routes/student-router')
 
 const app = express()
-const apiPort = 3000
+const apiPort = 8080
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cors())
